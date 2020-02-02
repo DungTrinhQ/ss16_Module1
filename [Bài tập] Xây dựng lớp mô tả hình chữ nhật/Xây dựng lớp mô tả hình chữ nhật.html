@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas height="700px" width="1500px" id="canvas" style="border: 1px solid red"></canvas>
+<script>
+    let Rect = function (wid,hei) {
+        this.width=wid;
+        this.height=hei;
+        this.Pmeter = function (Piremeter) {
+            return Piremeter=2*(this.width+this.height)   ;
+        };
+        this.Area = function (Area) {
+            return Area=this.height*this.width;
+        };
+        this.setWidth = function (wid) {
+            this.width = wid;
+        };
+        this.setHeight = function (hei) {
+            this.height = hei;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.getHeight = function () {
+            return this.height;
+        };
+    }
+    let hinhvuong = new Rect(500,300)
+    function drawRect() {
+        var ctx = document.getElementById("canvas").getContext("2d");
+        var width = hinhvuong.getWidth();
+        var height = hinhvuong.getHeight();
+        var rectangle = hinhvuong
+        ctx.beginPath();
+        ctx.rect(500,200,width,height);
+        ctx.fill()
+        ctx.closePath();
+    }
+    drawRect()
+</script>
+</body>
+</html>

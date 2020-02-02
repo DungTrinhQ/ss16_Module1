@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    let Temperature = function (C) {
+        this.C = parseFloat(C);
+
+        this.setC = function (C) {
+            this.C = C;
+        };
+        this.getC = function () {
+            return this.C;
+        };
+        this.getF = function () {
+            return this.C*1.8+32;
+        };
+        this.getK = function () {
+            return this.C+273;
+        };
+
+    };
+    let MathChange = new Temperature();
+    MathChange.setC(25);
+    alert('độ F là:'+MathChange.getF()+'độ K là:'+MathChange.getK())
+</script>
+</body>
+</html>
